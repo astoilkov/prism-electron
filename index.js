@@ -19,6 +19,10 @@ function ensureLanguageLoaded(language) {
 }
 
 module.exports = {
+  hasLanguage(language) {
+    return !!languages[language];
+  },
+
   highlight(code, language) {
     ensureLanguageLoaded(language);
 
