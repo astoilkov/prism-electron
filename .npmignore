@@ -1,6 +1,5 @@
-README.md
-update.js
-
 .gitattributes
 .gitignore
 .npmrc
+
+update.js
