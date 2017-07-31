@@ -14,7 +14,7 @@ function ensureLanguageLoaded(language) {
 
   dependencies[languages[language]].forEach(dependency => {
     loadedLanguages[dependency] = true;
-    require(`./dist/prism-${dependency}.min.js`);
+    require(`./dist/prism-${dependency}.min`);
   });
 }
 
