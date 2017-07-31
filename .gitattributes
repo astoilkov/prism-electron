@@ -1,0 +1,9 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# JS files must always use LF for tools to work
+*.js eol=lf
+*.html eol=lf
+
+# NPM 5 bug which changes line endings in package.json files https://github.com/npm/npm/issues/17161
+package.json eol=lf
