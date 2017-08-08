@@ -4,11 +4,7 @@ const dependencies = require('./dist/dependencies');
 
 let loadedLanguages = {};
 
-function ensureLanguageLoaded(language) {
-  if (loadedLanguages[language]) {
-    return;
-  }
-
+function loadLanguage(language) {
   loadedLanguages[language] = true;
   loadedLanguages[languages[language]] = true;
 
@@ -18,20 +14,14 @@ function ensureLanguageLoaded(language) {
   });
 }
 
-module.exports = {
-  hasLanguage(language) {
-    return !!languages[language];
-  },
+Prism.languages = new Proxy(Prism.languages, {
+  get(object, key) {
+    if (languages[key] && !loadedLanguages[key]) {
+      loadLanguage(key);
+    }
 
-  highlight(code, language) {
-    ensureLanguageLoaded(language);
-
-    return Prism.highlight(code, Prism.languages[language]);
-  },
-
-  tokenize(code, language) {
-    ensureLanguageLoaded(language);
-
-    return Prism.tokenize(code, Prism.languages[language]);
+    return object[key];
   }
-};
+});
+
+module.exports = Prism;
