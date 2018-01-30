@@ -43,7 +43,12 @@ Promise.resolve()
     require('./dist/prism-core.min.js');
 
     for (let key in state.dependencies) {
-      state.dependencies.forEach(language => require(`./dist/languages/prism-${language}.min.js`));
+      state.dependencies[key].forEach(language => {
+        let languagePath = `./dist/languages/prism-${language}.min.js`;
+        if (jetpack.exists(languagePath)) {
+          require(languagePath);
+        }
+      });
     }
 
     return Promise.resolve(state);
@@ -97,4 +102,6 @@ function getDependencies(languages, language) {
       dependencies.unshift(language);
     }
   }
+
+  return dependencies;
 }
