@@ -1,6 +1,14 @@
 {
   "name": "prism-electron",
   "version": "1.10.0",
+  "repository": "https://github.com/astoilkov/prism-electron",
+  "description": "Prism highlighter optimized for Electron and Node.js",
+  "license": "MIT",
+  "author": {
+    "name": "Antonio Stoilkov",
+    "email": "antonio.stoilkov@gmail.com",
+    "url": "https://astoilkov.com"
+  },
   "devDependencies": {
     "fs-jetpack": "1.1.0",
     "got": "7.1.0",
