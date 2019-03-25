@@ -1,6 +1,6 @@
 {
   "name": "prism-electron",
-  "version": "1.15.0",
+  "version": "1.16.0",
   "repository": "https://github.com/astoilkov/prism-electron",
   "description": "Prism highlighter optimized for Electron and Node.js",
   "license": "MIT",
