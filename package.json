@@ -12,6 +12,6 @@
   "devDependencies": {
     "fs-jetpack": "1.1.0",
     "got": "7.1.0",
-    "prismjs": "1.15.0"
+    "prismjs": "1.16.0"
   }
 }

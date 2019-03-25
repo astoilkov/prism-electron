@@ -7,7 +7,7 @@ Promise.resolve()
   .then(() => {
     return jetpack.copyAsync('./node_modules/prismjs/components', './dist/languages/', {
       matching: ['*.min.js', '!prism-core.min.js']
-    })
+    });
   })
   .then(() => {
     return jetpack.copyAsync('./node_modules/prismjs/components/prism-core.min.js', './dist/prism-core.min.js');
